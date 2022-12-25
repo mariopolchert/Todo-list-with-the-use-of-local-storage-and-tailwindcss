@@ -5,28 +5,38 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="#" type="image/x-icon" />
-        <link rel="stylesheet" href="style.css" />
+        <!-- <link
+            rel="stylesheet"
+            href="style.
+        css"
+        /> -->
+        <link rel="stylesheet" href="output.css" />
         <script src="script.js" defer></script>
         <title>MyTODO</title>
     </head>
-    <body>
-        <div class="container">
-            <div id="main">
-                <h1>MyTODO</h1>
-                <input
-                    id="inputTodo"
-                    type="text"
-                    placeholder="Add your task..."
-                />
-                <button id="buttonTodo" type="button">Add</button>
+    <body class="bg-gray-800 text-white">
+        <div class="container px-auto mx-auto">
+            <div id="main" class="container">
+                <h1 class="text-center text-3xl font-bold underline pt-14 pb-5">
+                    Todo List
+                </h1>
+                <form class="flex items-center w-4/6 pt-4 pb-6 mx-auto">
+                    <input
+                        class="px-2 w-96 mx-auto rounded border-2 bg-gray-700 hover:bg-gray-800 focus:bg-gray-800 text-white border-rose-500"
+                        id="inputTodo"
+                        type="text"
+                        placeholder="Add your task..."
+                    />
+                    <button
+                        class="px-2 mx-2 text-black font-bold border-2 border-rose-500 hover:bg-blue-600 bg-blue-400 rounded"
+                        id="buttonTodo"
+                        type="button"
+                    >
+                        ADD
+                    </button>
+                </form>
                 <ul id="ulTodo"></ul>
             </div>
         </div>
     </body>
 </html>
-
-<!--  <span
-    ><li>content</li>
-    <button>edit</button>
-    <button>delete</button>
-</span>  -->

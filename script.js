@@ -27,12 +27,14 @@ window.addEventListener("load", () => {
     function renderTodo(todo) {
         const newTodo = document.createElement("span");
         const doneBtn = document.createElement("button");
+        doneBtn.id = "doneBtn";
         const deleteBtn = document.createElement("button");
+        deleteBtn.id = "deleteBtn";
         const todoListItem = document.createElement("li");
 
         todoListItem.innerText = todo.content;
-        deleteBtn.innerText = "Delete";
-        doneBtn.innerText = "Done";
+        deleteBtn.innerText = "DELETE";
+        doneBtn.innerText = "DONE";
 
         newTodo.append(todoListItem, doneBtn, deleteBtn);
         ulTodo.appendChild(newTodo);
@@ -45,8 +47,15 @@ window.addEventListener("load", () => {
         });
 
         deleteBtn.addEventListener("click", (e) => {
-            e.target.parentNode.remove();
-            deleteFromLocalStorage(e.target.parentNode.firstChild.textContent);
+            // delete only if marked as done
+            if (
+                e.target.parentNode.firstChild.classList.contains("doneToggle")
+            ) {
+                e.target.parentNode.remove();
+                deleteFromLocalStorage(
+                    e.target.parentNode.firstChild.textContent
+                );
+            }
         });
     }
 
@@ -54,7 +63,7 @@ window.addEventListener("load", () => {
         const todo = {
             content: `${text}`,
             state: false,
-            timeID: Date.now(),
+            timeID: Date.now(), // not used for now
         };
         todos.push(todo);
         renderTodo(todo);

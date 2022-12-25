@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer my-classes {
+    .doneToggle {
+        background-color: green;
+        text-decoration: line-through;
+    }
+
+    span {
+        display: grid;
+        grid-template-columns: 6fr 1fr 1fr;
+        margin: .5rem .5rem;
+    }
+    
+    li {
+        border-radius: .2rem;
+        padding: 0 .5rem;
+        margin: 0 .2rem;
+        background-color: #666;
+    }
+    
+    button:focus {
+        outline: 1px dotted;
+        outline: 5px auto -webkit-focus-ring-color;
+    }
+    
+    #deleteBtn {
+        color: red !important;
+        background-color: blue !important;
+    }
+
+    span button {
+        font-weight: 500 !important;
+        margin: 0 .2rem !important;
+        border: 2px solid peru !important;
+        border-radius: .2rem !important;
+        background-color: green !important;
+        color: white !important;
+    }
+}
